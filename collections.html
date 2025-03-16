@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra - Collections</title>
+    <link rel="shortcut icon" href="./images/website_title.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    <style>
+        /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for Firefox */
+        .scrollbar-hide {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- offer -->
+    <section id="offerContainer"
+        class="flex items-center justify-center bg-black text-white gap-4 py-1 text-sm md:text-xl md:gap-20 ">
+        <p>Sign Up and <b class="text-red-500">GET 20% OFF</b> for your first Order</p>
+        <i id="offerClose" class="fa-solid fa-xmark cursor-pointer"></i>
+    </section>
+    <!-- Navbar -->
+    <section id="navbar" class="flex items-center justify-between sticky top-0 bg-white pl-6 pr-6 pt-2 z-20">
+        <h1 class="text-2xl md:text-4xl font-bold" style="font-family: Rochester, cursive;">Nostra</h1>
+        <div class="md:hidden">
+            <i id="navbarClick" class="fa-solid fa-bars cursor-pointer" style="color: #000000;"></i>
+        </div>
+        <div class="gap-12 hidden md:flex">
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="./index.html">Home</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="#newArri">New Arrival</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="#mostWanted">Most Wanted</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="#">Collections</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="#">Contact Us</a></p>
+        </div>
+    </section>
+
+    <!-- Side Navbar -->
+    <section>
+        <div id='sideNavbar'
+            class="bg-red-700 text-white  p-4  text-lg fixed top-0 flex flex-col gap-5 transition-all duration-700 z-20"
+            style="width: 50%;height: 100vh; left: -50%;">
+            <p style="text-align: right; cursor: pointer;">
+                <i id="sideNavClose" class="fa-solid fa-xmark"></i>
+            </p>
+            <p class="hover:underline"><a href="./index.html">Home</a></p>
+            <p class="hover:underline"><a href="#newArri">New Arrival</a></p>
+            <p class="hover:underline"><a href="#mostWanted">Most Wanted</a></p>
+            <p class="hover:underline"><a href="#">Collections</a></p>
+            <p class="hover:underline"><a href="#">Contact Us</a></p>
+        </div>
+    </section>
+
+
+    <!-- Main Container -->
+    <section>
+        <div class="flex mt-4">
+            <aside class="text-black p-5" style="border-right: solid 3px black;">
+                <div class="flex flex-col gap-10">
+                    <!-- Occasion Section -->
+                    <div class="flex flex-col gap-1">
+                        <h2 class="font-bold mb-2 md:text-2xl">Occasion</h2>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="summer" class="hidden">
+                            <span class="w-4 h-4 border border-black flex items-center justify-center">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Summer</span>
+                        </label>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="party" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Party</span>
+                        </label>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="beach" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Beach</span>
+                        </label>
+                    </div>
+
+                    <!-- Colors Section -->
+                    <div class="flex flex-col gap-1">
+                        <h2 class="font-bold mb-2 md:text-2xl">Colors</h2>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="red" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Red</span>
+                        </label>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="blue" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Blue</span>
+                        </label>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="white" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">White</span>
+                        </label>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="green" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Green</span>
+                        </label>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="black" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Black</span>
+                        </label>
+                    </div>
+
+                    <!-- Arrivals Section -->
+                    <div class="flex flex-col gap-1">
+                        <h2 class="font-bold mb-2 md:text-2xl">Arrivals</h2>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="`" value="new" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">New</span>
+                        </label>
+
+                        <label class="radiocheck flex items-center text-xs md:text-xl cursor-pointer">
+                            <input type="radio" name="checkBoxValue" value="old" class="hidden peer">
+                            <span
+                                class="w-4 h-4 border border-black flex items-center justify-center peer-checked:bg-black peer-checked:text-white">
+                                <p class="active hidden md:text-xs">✔</p>
+                            </span>
+                            <span class="ml-2">Old</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="flex-1 bg-white p-6">
+                <!-- search box -->
+                <div class="relative p-1 rounded-xl" style="border:solid 1px black;">
+                    <input id="searchBoxInput" class="pl-2 w-full border-none focus:outline-none" type="text"
+                        placeholder="Search">
+                    <i class="absolute right-3 bottom-2 fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+                </div>
+
+                <!-- image or product container -->
+                <div class="mt-5 flex justify-between flex-wrap gap-7">
+                    <div class="dressName summer">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image1.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party blue">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image2.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party white">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image3.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party black">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image4.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image5.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party green">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image6.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party red">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image7.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party black">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image8.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party white">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image9.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party blue">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image10.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName beach">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image11.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName beach black">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image12.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName beach white">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image13.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName beach green">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image14.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName beach white">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image15.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName beach">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image16.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName beach">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image17.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party red">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image18.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party green">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image19.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party blue">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image20.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party black">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image21.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName party red">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image22.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName summer white">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image23.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName summer">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image24.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName summer">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image25.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName summer black">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image26.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName summer">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image27.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div  class="dressName summer black">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image28.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div  class="dressName summer white">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image29.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                    <div class="dressName summer blue">
+                        <div class="w-36 text-xs p-2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                            <img src="./image/collections/image30.png" alt="">
+                            <h2 class="font-bold">Leriya Fashion</h2>
+                            <p>Men's Cotton Blend Mandarin Collar</p>
+                            <p class="text-yellow-300">★★★★☆</p>
+                            <p>300+ bought in past month</p>
+                            <p class="text-red-500 font-bold">Limited time deal</p>
+                            <p class="bg-red-500 w-10 rounded-sm text-center font-bold text-white">-78%</p>
+                            <p>₹494 M.R.P: <strike>₹2,199</strike></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+
+    <!-- News Letter -->
+    <section id="newsLetter" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div class="m-4 flex flex-col gap-2 mt-10 items-center justify-center">
+            <h2 class="font-bold text-xl md:text-4xl"
+                style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Join our News Letter
+            </h2>
+            <p class="text-xs md:text-2xl">Signup for our email newspaper to get exclusive discounts, updates, and more
+            </p>
+            <div class="mx-4 md:hidden border-2 border-black py-1" style="width: 400px;">
+                <input class="p-1 border border-none outline-none" style="width: 390px;" type="text"
+                    placeholder="Enter Your Email Address">
+            </div>
+            <div class="mx-4 hidden md:block border-2 border-black py-1" style="width: 1000px;">
+                <input class="p-1 border border-none outline-none" style="width: 990px;" type="text"
+                    placeholder="Enter Your Email Address">
+            </div>
+            <p class="cursor-pointer bg-black w-24 md:w-auto text-center rounded-lg p-2 text-xs md:text-xl text-white">
+                Subscribe 🡪</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="bg-black text-white p-4 flex flex-col gap-3">
+            <h2 class="text-2xl" style="font-family: Rochester, cursive;">Nostra</h2>
+            <p class="text-xs">The Standard chunk of Lorem ipsum used since the 1500s is reprodused below for those
+                interest</p>
+            <div class="flex gap-3">
+                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+            </div>
+            <p class="text-xs">@ 2025 Nostra.in</p>
+        </div>
+    </footer>
+    <!-- Link JS File -->
+    <script src="./collections.js"></script>
+</body>
+
+</html>

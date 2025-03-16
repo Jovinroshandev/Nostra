@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra - Home</title>
+    <link rel="shortcut icon" href="./images/website_title.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    <style>
+        /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for Firefox */
+        .scrollbar-hide {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- offer -->
+    <section id="offerContainer"
+        class="flex items-center justify-center bg-black text-white gap-4 py-1 text-sm md:text-xl md:gap-20 ">
+        <p>Sign Up and <b class="text-red-500">GET 20% OFF</b> for your first Order</p>
+        <i id="offerClose" class="fa-solid fa-xmark cursor-pointer"></i>
+    </section>
+    <!-- Navbar -->
+    <section id="navbar" class="flex items-center justify-between sticky top-0 bg-white pl-6 pr-6 pt-2 z-20">
+        <h1 class="text-2xl md:text-4xl font-bold" style="font-family: Rochester, cursive;">Nostra</h1>
+        <div class="md:hidden">
+            <i id="navbarClick" class="fa-solid fa-bars cursor-pointer" style="color: #000000;"></i>
+        </div>
+        <div class="gap-12 hidden md:flex">
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="./index.html">Home</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="#newArri">New Arrival</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="#mostWanted">Most Wanted</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="./collections.html">Collections</a></p>
+            <p class="hover:bg-red-100 p-1 rounded-xl cursor-pointer"><a href="./contact.html">Contact Us</a></p>
+        </div>
+    </section>
+
+    <!-- Side Navbar -->
+    <section>
+        <div id='sideNavbar'
+            class="bg-red-700 text-white  p-4  text-lg fixed top-0 flex flex-col gap-5 transition-all duration-700 z-20"
+            style="width: 50%;height: 100vh; left: -50%;">
+            <p style="text-align: right; cursor: pointer;">
+                <i id="sideNavClose" class="fa-solid fa-xmark"></i>
+            </p>
+            <p class="hover:underline"><a href="./index.html">Home</a></p>
+            <p class="hover:underline"><a href="#newArri">New Arrival</a></p>
+            <p class="hover:underline"><a href="#mostWanted">Most Wanted</a></p>
+            <p class="hover:underline"><a href="./collections.html">Collections</a></p>
+            <p class="hover:underline"><a href="./contact.html">Contact Us</a></p>
+        </div>
+    </section>
+
+    <!-- image slider -->
+    <section id="hiddenDiv" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div id="sliderContainer" class="relative flex bg-red-600 m-4 group">
+            <div id="sliders" class="w-full h-full shrink-0 m-0 relative overflow-hidden">
+                <div id="slides" class="w-full h-full" style="display: flex; transition: transform 0.5s ease-in-out;">
+                    <div id="slide" class="w-full h-full relative flex-shrink-0">
+                        <img src="./image/slider2.png" alt="slider-image" class="w-full h-full object-cover">
+                    </div>
+                    <div id="slide" class="w-full h-full relative flex-shrink-0">
+                        <img src="./image/slider1.png" alt="slider-image " class="w-full h-full object-cover">
+                    </div>
+                    <div id="slide" class="w-full h-full relative flex-shrink-0">
+                        <img src="./image/slider3.png" alt="slider-image " class="w-full h-full object-cover">
+                    </div>
+
+                </div>
+                <!-- Black Overlay (Now Works on Hover) -->
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                </div>
+            </div>
+
+            <!-- Centered "Shop Now" Button -->
+            <div class="absolute bottom-2 md:bottom-8 left-1/2 transform -translate-x-1/2">
+                <div class="bg-white cursor-pointer py-1 md:py-2 md:px-4 px-2 rounded-sm"
+                    style="width: fit-content; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    <p class="text-sm md:text-xl">Shop Now 🡪</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons (Arrows) -->
+            <div class="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between px-10">
+                <button id="next" class="bg-transparent text-4xl md:text-8xl text-white p-3 rounded-full cursor-pointer"
+                    onclick="nextSlide()">&#10094;</button>
+                <button id="prev" class="bg-transparent text-4xl md:text-8xl text-white p-3 rounded-full cursor-pointer"
+                    onclick="prevSlide()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands -->
+    <section id="brandHid" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div class="mx-4 mt-10 md:mt-16">
+            <h1 class="font-bold text-xs md:text-3xl pb-5">Brands</h1>
+            <div class="flex items-center justify-between text-xs md:text-2xl gap-x-5">
+                <div class="flex flex-col items-center gap-2">
+                    <img class="w-10 md:w-14 h-10 md:h-14 object-contain" src="./image/brand/adidas.png"
+                        alt="adidas-logo">
+                    <h2 class="text-center">Adidas</h2>
+                </div>
+                <div class="flex flex-col items-center text-xs md:text-2xl gap-2">
+                    <img class="w-10 md:w-14 h-10 md:h-14 object-contain" src="./image/brand/behance.png"
+                        alt="behance-logo">
+                    <h2 class="text-center">Behance</h2>
+                </div>
+                <div class="flex flex-col items-center text-xs md:text-2xl gap-2">
+                    <img class="w-10 md:w-14 h-10 md:h-14 object-contain" src="./image/brand/leaves.png"
+                        alt="leaves-logo">
+                    <h2 class="text-center">Leaves</h2>
+                </div>
+                <div class="flex flex-col items-center text-xs md:text-2xl gap-2">
+                    <img class="w-10 md:w-14 h-10 md:h-14 object-contain" src="./image/brand/puma.png" alt="puma-logo">
+                    <h2 class="text-center">Puma</h2>
+                </div>
+                <div class="flex flex-col items-center text-xs md:text-2xl gap-2">
+                    <img class="w-10 md:w-14 h-10 md:h-14 object-contain" src="./image/brand/simple.png"
+                        alt="simple-logo">
+                    <h2 class="text-center">Simple</h2>
+                </div>
+                <div class="flex flex-col items-center text-xs md:text-2xl gap-2">
+                    <img class="w-10 md:w-14 h-10 md:h-14 object-contain" src="./image/brand/twitch.png"
+                        alt="twitch-logo">
+                    <h2 class="text-center">Twitch</h2>
+                </div>
+                <div class="flex flex-col items-center text-xs md:text-2xl gap-2">
+                    <img class="w-10 md:w-14 h-10 md:h-14 object-contain" src="./image/brand/zara.png" alt="zara-logo">
+                    <h2 class="text-center">Zara</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Experience -->
+    <section id="CustomExp" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div class="flex items-center justify-between text-xs m-4 md:text-3xl mt-10 md:mt-16 pb-5">
+            <div class="font-bold">
+                <h2>We Provide Best</h2>
+                <h2>Customer Experience</h2>
+            </div>
+            <div class="md:hidden md:text-xl">
+                <h2 style="font-size: 10px;">|| We ensure that our customer have the best shopping experience</h2>
+            </div>
+            <div class="hidden md:block md:text-xl">
+                <h2>|| We ensure that our customer have the best shopping experience</h2>
+            </div>
+        </div>
+        <div class="flex m-4 justify-between ">
+            <div>
+                <div class="w-28 text-xs p-1 md:w-72 bg-gray-100">
+                    <p class="fa-xl pb-2 hidden md:block"><i class="fa-solid fa-award fa-3x"></i></i></p>
+                    <p class="fa-xl pb-2 md:hidden"><i class="fa-solid fa-award"></i></i></p>
+                    <p class="font-bold pb-1 md:hidden" style="font-size: 10px;">Original Products</p>
+                    <p class="font-bold pb-1 hidden md:block text-xl">Original Products</p>
+                    <p class="text-wrap md:hidden" style="font-size: 10px;">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Porro, consequuntur.</p>
+                    <p class="text-wrap hidden md:block text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Porro, consequuntur.</p>
+                </div>
+            </div>
+            <div>
+                <div class="w-28 text-xs p-1 md:w-72 bg-gray-100">
+                    <p class="md:fa-2x fa-xl pb-2 hidden md:block"><i class="fa-regular fa-face-smile fa-3x"
+                            style="color: #000000;"></i></p>
+                    <p class="md:fa-2x fa-xl pb-2 md:hidden"><i class="fa-regular fa-face-smile"
+                            style="color: #000000;"></i></p>
+                    <p class="font-bold pb-1 md:hidden" style="font-size: 10px;">Satisfaction Guarantee</p>
+                    <p class="font-bold pb-1 hidden md:block text-xl">Satisfaction Guarantee</p>
+                    <p class="text-wrap md:hidden" style="font-size: 10px;">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit.</p>
+                    <p class="text-wrap hidden md:block text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Porro, consequuntur.</p>
+                </div>
+            </div>
+            <div>
+                <div class="w-28 text-xs p-1 md:w-72 bg-gray-100">
+                    <p class="md:fa-2x fa-xl pb-2 hidden md:block"><i class="fa-solid fa-crown fa-3x"
+                            style="color: #000000;"></i></i></p>
+                    <p class="md:fa-2x fa-xl pb-2 md:hidden"><i class="fa-solid fa-crown" style="color: #000000;"></i>
+                    </p>
+                    <p class="font-bold pb-1 md:hidden" style="font-size: 10px;">New Arrival Everyday</p>
+                    <p class="font-bold pb-1 hidden md:block text-xl">New Arrival Everyday</p>
+                    <p class="text-wrap md:hidden" style="font-size: 10px;">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Porro, consequuntur.</p>
+                    <p class="text-wrap hidden md:block text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Porro, consequuntur.</p>
+                </div>
+            </div>
+            <div>
+                <div class="w-28 text-xs p-1 md:w-72 bg-gray-100">
+                    <p class="md:fa-2x fa-xl pb-2 hidden md:block"><i class="fa-solid fa-truck-fast fa-3x"
+                            style="color: #000000;"></i></p>
+                    <p class="md:fa-2x fa-xl pb-2 md:hidden"><i class="fa-solid fa-truck-fast"
+                            style="color: #000000;"></i></p>
+                    <p class="font-bold pb-1 md:hidden" style="font-size: 10px;">Fast & Free Shipping</p>
+                    <p class="font-bold pb-1 hidden md:block text-xl">Fast & Free Shipping</p>
+                    <p class="text-wrap md:hidden" style="font-size: 10px;">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Porro, consequuntur.</p>
+                    <p class="text-wrap hidden md:block text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Porro, consequuntur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section id="newArri" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div class="newArrivals m-4">
+            <!-- Responsive Heading -->
+            <h1 class="font-bold text-xs md:hidden">New Arrivals</h1>
+            <h1 class="font-bold hidden md:block text-3xl mt-10 mb-10">New Arrivals</h1>
+
+            <!-- Image Container with Shadow Background -->
+            <div class="relative flex justify-between gap-4 py-5">
+                <div class="relative w-44 h-28 cursor-pointer md:w-60 md:h-60 rounded overflow-hidden shadow-md group">
+                    <img src="./image/new-arrival/image1.png" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-16 absolute md:bottom-24 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                    <div class="md:hidden left-4 absolute bottom-10 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl"
+                        style="font-size: 8px;">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                </div>
+                <div class="relative w-44 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group">
+                    <img src="./image/new-arrival/image8.png" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-16 absolute md:bottom-24 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                    <div class="md:hidden left-4 absolute bottom-10 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl"
+                        style="font-size: 8px;">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                </div>
+                <div class="relative w-44 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group">
+                    <img src="./image/new-arrival/image3.png" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-16 absolute md:bottom-24 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                    <div class="md:hidden left-4 absolute bottom-10 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl"
+                        style="font-size: 8px;">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                </div>
+                <div class="relative w-44 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group">
+                    <img src="./image/new-arrival/image4.png" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-16 absolute md:bottom-24 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                    <div class="md:hidden left-4 absolute bottom-10 cursor-pointer z-10 bg-white text-black px-3 py-1 rounded-xl"
+                        style="font-size: 8px;">
+                        <p>Shop Now 🡪</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Wanted -->
+    <section id="mostWanted" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div class="newArrivals m-4">
+            <!-- Responsive Heading -->
+            <h1 class="font-bold text-xs md:hidden">Most Wanted</h1>
+            <h1 class="font-bold hidden md:block text-3xl mt-10 mb-10">Most Wanted</h1>
+
+            <!-- Image Container with Shadow Background -->
+            <div class="relative flex justify-between gap-4 py-5 overflow-x-scroll whitespace-nowrap scrollbar-hide">
+                <div class="relative w-24 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group flex-shrink-0">
+                    <img src="./image/new-arrival/image8.png" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-0 absolute md:top-0 md:text-xl z-10 bg-red-500 text-white px-6 py-1">
+                        <p>Sale</p>
+                    </div>
+                    <div class="md:hidden left-0 absolute top-0  z-10 bg-red-500 text-white px-6 py-1"
+                        style="font-size: 8px;">
+                        <p>Sale</p>
+                    </div>
+                    <div class="hidden md:block right-3 absolute bottom-2 text-4xl cursor-pointer z-10">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                    <div class="md:hidden right-1 absolute bottom-1 cursor-pointer z-10 " style="font-size: 20px;">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                </div>
+                <div class="relative w-24 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group flex-shrink-0">
+                    <img src="./image/new-arrival/image5.jpg" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-0 absolute md:top-0 md:text-xl cursor-pointer z-10 bg-red-500 text-white px-6 py-1">
+                        <p>Sale</p>
+                    </div>
+                    <div class="md:hidden left-0 absolute top-0 cursor-pointer z-10 bg-red-500 text-white px-6 py-1"
+                        style="font-size: 8px;">
+                        <p>Sale</p>
+                    </div>
+                    <div class="hidden md:block right-3 absolute bottom-2 text-4xl cursor-pointer z-10">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                    <div class="md:hidden right-1 absolute bottom-1 cursor-pointer z-10 " style="font-size: 20px;">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                </div>
+                <div class="relative w-24 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group flex-shrink-0">
+                    <img src="./image/new-arrival/image4.png" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-0 absolute md:top-0 md:text-xl cursor-pointer z-10 bg-red-500 text-white px-6 py-1">
+                        <p>Sale</p>
+                    </div>
+                    <div class="md:hidden left-0 absolute top-0 cursor-pointer z-10 bg-red-500 text-white px-6 py-1"
+                        style="font-size: 8px;">
+                        <p>Sale</p>
+                    </div>
+                    <div class="hidden md:block right-3 absolute bottom-2 text-4xl cursor-pointer z-10">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                    <div class="md:hidden right-1 absolute bottom-1 cursor-pointer z-10 " style="font-size: 20px;">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                </div>
+                <div class="relative w-24 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group flex-shrink-0">
+                    <img src="./image/new-arrival/image1.png" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-0 absolute md:top-0 md:text-xl cursor-pointer z-10 bg-red-500 text-white px-6 py-1">
+                        <p>Sale</p>
+                    </div>
+                    <div class="md:hidden left-0 absolute top-0 cursor-pointer z-10 bg-red-500 text-white px-6 py-1"
+                        style="font-size: 8px;">
+                        <p>Sale</p>
+                    </div>
+                    <div class="hidden md:block right-3 absolute bottom-2 text-4xl cursor-pointer z-10">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                    <div class="md:hidden right-1 absolute bottom-1 cursor-pointer z-10 " style="font-size: 20px;">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                </div>
+                <div class="relative w-24 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group flex-shrink-0">
+                    <img src="./image/new-arrival/image6.jpg" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-0 absolute md:top-0 md:text-xl cursor-pointer z-10 bg-red-500 text-white px-6 py-1">
+                        <p>Sale</p>
+                    </div>
+                    <div class="md:hidden left-0 absolute top-0 cursor-pointer z-10 bg-red-500 text-white px-6 py-1"
+                        style="font-size: 8px;">
+                        <p>Sale</p>
+                    </div>
+                    <div class="hidden md:block right-3 absolute bottom-2 text-4xl cursor-pointer z-10">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                    <div class="md:hidden right-1 absolute bottom-1 cursor-pointer z-10 " style="font-size: 20px;">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                </div>
+                <div class="relative w-24 h-28 md:w-60 md:h-60 rounded overflow-hidden shadow-md group flex-shrink-0">
+                    <img src="./image/new-arrival/image7.jpg" alt="dress-image" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="hidden md:block md:left-0 absolute md:top-0 md:text-xl cursor-pointer z-10 bg-red-500 text-white px-6 py-1">
+                        <p>Sale</p>
+                    </div>
+                    <div class="md:hidden left-0 absolute top-0 cursor-pointer z-10 bg-red-500 text-white px-6 py-1"
+                        style="font-size: 8px;">
+                        <p>Sale</p>
+                    </div>
+                    <div class="hidden md:block right-3 absolute bottom-2 text-4xl cursor-pointer z-10">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                    <div class="md:hidden right-1 absolute bottom-1 cursor-pointer z-10 " style="font-size: 20px;">
+                        <p><i class="fa-regular fa-heart" style="color: #000000;"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Offer -->
+    <section id="limitedOffer" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div class="flex items-center m-4 gap-4 md:gap-16 bg-red-900 p-2 md:px-10 md:py-5">
+            <div class="w-64 md:w-auto">
+                <img class="rounded-xl" src="./image/footer-image.png" alt="">
+            </div>
+            <div class="font-bold text-white">
+                <h2 class="text-xl md:text-5xl md:mb-4">Limited Offer</h2>
+                <p class="hidden md:block text-2xl mb-4">35% OFF on this for the first 30 Customers</p>
+                <p class="md:hidden" style="font-size: 10px;">35% OFF on this for the first</p>
+                <p class="md:hidden" style="font-size: 10px;">30 Customers</p>
+                <p
+                    class="hidden md:block mt-4 w-40 cursor-pointer py-5 text-center rounded-xl bg-white font-medium text-black text-xl">
+                    Shop Now 🡪</p>
+                <p class="md:hidden mt-4 w-14 cursor-pointer text-center rounded-xl bg-white text-black"
+                    style="font-size: 8px;">Shop Now 🡪</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Letter -->
+    <section id="newsLetter" class="opacity-0 transition-opacity duration-1000 bg-white">
+        <div class="m-4 flex flex-col gap-2 mt-10 items-center justify-center">
+            <h2 class="font-bold text-xl md:text-4xl"
+                style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Join our News Letter
+            </h2>
+            <p class="text-xs md:text-2xl">Signup for our email newspaper to get exclusive discounts, updates, and more
+            </p>
+            <div class="mx-4 md:hidden border-2 border-black py-1" style="width: 400px;">
+                <input class="p-1 border border-none outline-none" style="width: 390px;" type="text"
+                    placeholder="Enter Your Email Address">
+            </div>
+            <div class="mx-4 hidden md:block border-2 border-black py-1" style="width: 1000px;">
+                <input class="p-1 border border-none outline-none" style="width: 990px;" type="text"
+                    placeholder="Enter Your Email Address">
+            </div>
+            <p class="cursor-pointer bg-black w-24 md:w-auto text-center rounded-lg p-2 text-xs md:text-xl text-white">
+                Subscribe 🡪</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="bg-black text-white p-4 flex flex-col gap-3">
+            <h2 class="text-2xl" style="font-family: Rochester, cursive;">Nostra</h2>
+            <p class="text-xs">The Standard chunk of Lorem ipsum used since the 1500s is reprodused below for those
+                interest</p>
+            <div class="flex gap-3">
+                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+            </div>
+            <p class="text-xs">@ 2025 Nostra.in</p>
+        </div>
+    </footer>
+    <!-- Link JS File -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
